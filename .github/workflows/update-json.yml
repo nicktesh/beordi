@@ -2,7 +2,7 @@ name: Update SVG Data
 
 on:
   schedule:
-    - cron: "12 4 * * *"  # Runs at 12:05 AM EST (05:05 UTC)
+    - cron: "0 5 * * *"  # Runs at midnight EST (05:00 UTC)
   workflow_dispatch: # Allows manual trigger from GitHub Actions UI
 
 jobs:
