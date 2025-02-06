@@ -1,17 +1,20 @@
 name: Update SVG Data
-
 on:
   schedule:
-    - cron: "0 5 * * *"  # Runs at midnight EST (05:00 UTC)
+    - cron: "0 5 * * *" # Runs at 5:00 UTC daily
   workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write # Explicitly set permissions for repo contents
 
 jobs:
   update-json:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
