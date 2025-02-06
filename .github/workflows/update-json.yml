@@ -28,9 +28,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git pull origin main --rebase
           git add svgs.json
           git commit -m '🔄 Auto-update SVG JSON' || echo "No changes to commit"
-          git push origin HEAD:main --force
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
